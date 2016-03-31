@@ -1,3 +1,11 @@
 task helloWorld << {
-    printLn 'hello, world'
+    println 'hello, world'
+}
+
+task hello(dependsOn: helloWorld) << {
+    print 'hello, '
+}
+
+task world(dependsOn: hello) << {
+    println 'world'
 }
